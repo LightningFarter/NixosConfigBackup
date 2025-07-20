@@ -40,9 +40,16 @@
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
   
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+
+  programs.hyprland.enable = true;
+
+  xdg.portal = {
+      enable = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+  };
+
+  services.xserver.displayManager.sddm.enable = true;
   
 
   # Configure keymap in X11
@@ -80,6 +87,13 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     git
+    hyprland
+    kitty
+    waybar
+    rofi
+    dunst
+    xdg-utils
+    xwayland
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
