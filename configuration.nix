@@ -100,8 +100,8 @@
   ];
 
   environment.sessionVariables = {
-    GDK_DPI_SCALE = "2";
-    QT_SCALE_FACTOR = "2";
+    GDK_DPI_SCALE = "1";
+    QT_SCALE_FACTOR = "1";
     XCURSOR_SIZE = "32";
   };
 
