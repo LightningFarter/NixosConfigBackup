@@ -40,6 +40,8 @@
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
   
+  nixpkgs.config.allowUnfree = true;
+
   services.displayManager.sddm.wayland.enable = true;
 
   programs.hyprland.enable = true;
@@ -93,7 +95,15 @@
     xdg-utils
     xwayland
     networkmanager
+    neovim
+    vscode
   ];
+
+  environment.sessionVariables = {
+    GDK_DPI_SCALE = "2";
+    QT_SCALE_FACTOR = "2";
+    XCURSOR_SIZE = "32";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
