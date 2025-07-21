@@ -51,6 +51,11 @@
       extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
   };
   
+  fileSystems."/ubuntu" = {
+    device = "/dev/disk/by-uuid/75931f3e-6345-434b-9684-5d8ab6b2f621";
+    fsType = "btrfs";
+    options = [ "defaults" ];
+  };
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
