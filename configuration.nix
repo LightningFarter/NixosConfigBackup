@@ -57,6 +57,8 @@
     options = [ "defaults" ];
   };
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -102,6 +104,7 @@
     networkmanager
     neovim
     vscode
+    zsh
   ];
 
   environment.sessionVariables = {
@@ -109,6 +112,10 @@
     QT_SCALE_FACTOR = "1";
     XCURSOR_SIZE = "32";
   };
+
+  users.users.jason = {
+    shell = pkgs.zsh;
+  }
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
