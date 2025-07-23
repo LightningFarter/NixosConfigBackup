@@ -114,6 +114,8 @@
   };
 
   users.users.jason = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
   };
 
