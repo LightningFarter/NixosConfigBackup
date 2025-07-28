@@ -109,6 +109,7 @@
     zsh
     google-chrome
     brave
+    discord-ptb
   ];
 
   environment.sessionVariables = {
