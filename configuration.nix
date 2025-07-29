@@ -128,6 +128,21 @@
     google-chrome
     brave
     discord-ptb
+    tree
+    htop
+    curl
+    neofetch
+    bat
+    fd
+    ripgrep
+    bottom
+    lsof
+    ncdu
+    unzip
+    zip
+    jq
+    fzf
+    rsync
   ];
 
   environment.sessionVariables = {
