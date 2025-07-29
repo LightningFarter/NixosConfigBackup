@@ -143,6 +143,7 @@
     jq
     fzf
     rsync
+    file
   ];
 
   environment.sessionVariables = {
