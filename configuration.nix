@@ -59,6 +59,24 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  fonts = {
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+      wqy_microhei
+    ];
+
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        serif = [ "Noto Serif CJK SC" ];
+        sansSerif = [ "Noto Sans CJK SC" ];
+        monospace = [ "Noto Sans Mono CJK SC" ];
+      };
+    };
+  };
+
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
