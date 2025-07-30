@@ -145,6 +145,9 @@
     fzf
     rsync
     file
+    gcc
+    uv
+    python3
   ];
 
   environment.sessionVariables = {
