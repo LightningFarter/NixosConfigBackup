@@ -64,14 +64,15 @@
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-emoji
-      wqy_microhei
+      jetbrains-mono
+      dejavu_fonts
     ];
 
     fontconfig = {
       enable = true;
       defaultFonts = {
-        serif = [ "Noto Serif" "Noto Serif CJK SC" ];
-        sansSerif = [ "Noto Sans" "Noto Sans CJK SC" ];
+        serif = [ "DejaVu Serif" "Noto Serif CJK SC" ];
+        sansSerif = [ "DejaVu Sans" "Noto Sans CJK SC" ];
         monospace = [ "JetBrainsMono" "Noto Sans Mono CJK SC" ];
       };
     };
