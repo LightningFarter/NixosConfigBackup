@@ -159,8 +159,8 @@
     fcitx5
     fcitx5-chewing
     fcitx5-configtool
-    thunar
-    tumbler
+    xfce.thunar
+    xfce.tumbler
     imv
     evince
   ];
