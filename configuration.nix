@@ -105,6 +105,14 @@
   #   ];
   # };
 
+  i18n.inputMethod.enabled = "fcitx5";
+  i18n.inputMethod.fcitx5.addons = with pkgs; [
+    fcitx5-chewing
+    fcitx5-gtk
+    fcitx5-qt
+    fcitx5-configtool
+  ];
+
   programs.firefox.enable = true;
   programs.zsh.enable = true;
   programs.chromium.enable = true;
@@ -148,6 +156,13 @@
     gcc
     uv
     python3
+    fcitx5
+    fcitx5-chewing
+    fcitx5-configtool
+    thunar
+    tumbler
+    imv
+    evince
   ];
 
   environment.sessionVariables = {
