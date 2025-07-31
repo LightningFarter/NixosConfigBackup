@@ -134,6 +134,7 @@
     dunst # notification daemon
     xdg-utils # utils
     xwayland # support wayland fallback
+    xorg.xrdb # xwayland configuration
 
     waybar # status bar
 
