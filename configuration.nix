@@ -172,6 +172,7 @@
     python3 # better shell script
 
     # input methods
+    numlockx # number lock
     fcitx5
     fcitx5-chewing
     fcitx5-configtool
