@@ -66,6 +66,7 @@
       noto-fonts-emoji
       jetbrains-mono
       dejavu_fonts
+      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
 
     fontconfig = {
