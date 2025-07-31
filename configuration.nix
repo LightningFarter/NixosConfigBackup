@@ -130,12 +130,12 @@
     git # git source control
 
     hyprland # life
+    hyprpaper # wallpaper
     rofi # menu manager
     dunst # notification daemon
     xdg-utils # utils
     xwayland # support wayland fallback
     xorg.xrdb # xwayland configuration
-
     waybar # status bar
 
     networkmanager # network
@@ -172,7 +172,6 @@
     python3 # better shell script
 
     # input methods
-    numlockx # number lock
     fcitx5
     fcitx5-chewing
     fcitx5-configtool
