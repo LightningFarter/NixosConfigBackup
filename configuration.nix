@@ -119,49 +119,76 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    git
-    hyprland
-    kitty
-    waybar
-    rofi
-    dunst
-    xdg-utils
-    xwayland
-    networkmanager
-    neovim
-    vscode
-    zsh
-    google-chrome
-    brave
-    discord-ptb
-    tree
-    htop
-    curl
-    neofetch
-    bat
-    fd
-    ripgrep
-    bottom
-    lsof
-    ncdu
-    unzip
-    zip
-    jq
-    fzf
-    rsync
-    file
-    gcc
-    uv
-    python3
+    vim # text editor, never use nano
+    neovim # better vim
+    vscode # i code here
+
+    wget # for downloading
+    curl # good downloading
+
+    git # git source control
+
+    hyprland # life
+    rofi # menu manager
+    dunst # notification daemon
+    xdg-utils # utils
+    xwayland # support wayland fallback
+
+    waybar # status bar
+
+    networkmanager # network
+    networkmanagerapplet # applet for network
+    
+    kitty # terminal
+    zsh # good shell
+    neofetch # display status on shell
+
+    google-chrome # not a good browser but i got kidnapped
+    brave # good browser
+
+    discord-ptb # discord
+
+    # tools make life better
+    tree # list the files
+    htop # see my cpu status
+    bottom # better htop
+    bat # better cat
+    fd # better find
+    fzf # fuzzy finder
+    ripgrep # better grep
+    lsof # list opened files
+    ncdu # disk space usage
+    unzip # to unzip
+    zip # to zip
+    jq # sed for json
+    rsync # sync files
+    file # show file types
+
+    # coding
+    gcc # c and cpp
+    uv # package manager
+    python3 # better shell script
+
+    # input methods
     fcitx5
     fcitx5-chewing
     fcitx5-configtool
+
+    brightnessctl # brightness control
+
+    # file manager
     xfce.thunar
     xfce.tumbler
+
+    # video viewer
     imv
-    evince
+
+    # audio controler
+    pavucontrol # pause audio volume control
+    playerctl # media player remote interface
+
+    # pdf viewer
+    evince # gnome pdf viewer
   ];
 
   environment.sessionVariables = {
