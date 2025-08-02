@@ -108,8 +108,9 @@
 
   i18n.inputMethod.enabled = "fcitx5";
   i18n.inputMethod.fcitx5.addons = with pkgs; [
-    fcitx5-chewing
+    fcitx5-chinese-addons
     fcitx5-gtk
+    fcitx5-qt
     fcitx5-configtool
   ];
 
@@ -172,8 +173,6 @@
     python3 # better shell script
 
     # input methods
-    fcitx5
-    fcitx5-chewing
     fcitx5-configtool
 
     brightnessctl # brightness control
