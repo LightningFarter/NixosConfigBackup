@@ -197,6 +197,11 @@
     GDK_DPI_SCALE = "1";
     QT_SCALE_FACTOR = "1";
     XCURSOR_SIZE = "32";
+    
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
+    XMODIFIERS = "@im=fcitx";
+    INPUT_METHOD = "fcitx";
   };
 
   users.users.jason = {
