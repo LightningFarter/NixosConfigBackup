@@ -184,7 +184,7 @@
     brightnessctl # brightness control
 
     # file manager
-    gnome.nautilus
+    nautilus
 
     # video viewer
     imv
