@@ -80,7 +80,7 @@
   };
 
   services.dbus.enable = true;
-  services.polkit.enable = true;
+  security.polkit.enable = true;
 
 
   # Configure keymap in X11
