@@ -145,6 +145,7 @@
     waybar # status bar
     swayidle # hold hyprlock
     hyprlock # lockscreen
+    wl-clipboard # for waybar
 
     networkmanager # network
     networkmanagerapplet # applet for network
