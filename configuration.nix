@@ -143,6 +143,7 @@
     xwayland # support wayland fallback
     xorg.xrdb # xwayland configuration
     waybar # status bar
+    swayidle # hold hyprlock
     hyprlock # lockscreen
 
     networkmanager # network
