@@ -208,16 +208,6 @@
     '';
   };
 
-  systemd.services.hyprlock-before-suspend = {
-    description = "Lock screen before suspend using hyprlock";
-    wantedBy = [ "systemd-suspend.service" ];
-    before = [ "systemd-suspend.service" ];
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = "${pkgs.hyprlock}/bin/hyprlock";
-    };
-  };
-
   environment.sessionVariables = {
     GDK_DPI_SCALE = "1";
     QT_SCALE_FACTOR = "1";
