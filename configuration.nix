@@ -143,6 +143,7 @@
     xwayland # support wayland fallback
     xorg.xrdb # xwayland configuration
     waybar # status bar
+    hyprlock # lockscreen
 
     networkmanager # network
     networkmanagerapplet # applet for network
@@ -196,6 +197,15 @@
     # pdf viewer
     evince # gnome pdf viewer
   ];
+
+  security.pam.services.hyprlock = {
+    text = ''
+      auth include login
+      account include login
+      password include login
+      session include login
+    '';
+  };
 
   environment.sessionVariables = {
     GDK_DPI_SCALE = "1";
