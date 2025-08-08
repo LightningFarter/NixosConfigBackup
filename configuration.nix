@@ -51,15 +51,7 @@
       extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
   };
 
-  services.keyd = {
-    enable = true;
-
-    keyboards.default = {
-      settings = {
-        "main.combo shift+meta+f23" = "leftmeta";
-      };
-    };
-  };
+  services.keyd.enable = true;
   
   fileSystems."/ubuntu" = {
     device = "/dev/disk/by-uuid/75931f3e-6345-434b-9684-5d8ab6b2f621";
@@ -169,6 +161,7 @@ security.rtkit.enable = true;
     swayidle # hold hyprlock
     hyprlock # lockscreen
     wl-clipboard # for waybar
+    keyd # rebind key
 
     networkmanager # network
     networkmanagerapplet # applet for network
