@@ -53,13 +53,10 @@
 
   services.keyd = {
     enable = true;
+
     keyboards.default = {
       settings = {
-        # Use a string instead of a Nix attrset
-        text = ''
-          [main]
-          combo shift+meta+f23 = leftmeta
-        '';
+        "main.combo shift+meta+f23" = "leftmeta";
       };
     };
   };
