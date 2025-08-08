@@ -57,6 +57,19 @@
     options = [ "defaults" ];
   };
 
+  hardware.bluetooth.enable = true;
+
+  services.blueman.enable = true;
+
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+    alsa.enable = true;
+    jack.enable = false;
+  };
+
+security.rtkit.enable = true;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   fonts = {
