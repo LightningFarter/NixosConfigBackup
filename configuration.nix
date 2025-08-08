@@ -55,12 +55,11 @@
     enable = true;
     keyboards.default = {
       settings = {
-        main = {
-          # Allow Copilot key to work as Super
-          combos = {
-            "shift+meta+f23" = "leftmeta";
-          };
-        };
+        # Use a string instead of a Nix attrset
+        text = ''
+          [main]
+          combo shift+meta+f23 = leftmeta
+        '';
       };
     };
   };
