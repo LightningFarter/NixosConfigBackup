@@ -50,6 +50,20 @@
       enable = true;
       extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
   };
+
+  services.keyd = {
+    enable = true;
+    keyboards.default = {
+      settings = {
+        main = {
+          # Allow Copilot key to work as Super
+          combos = {
+            "shift+meta+f23" = "leftmeta";
+          };
+        };
+      };
+    };
+  };
   
   fileSystems."/ubuntu" = {
     device = "/dev/disk/by-uuid/75931f3e-6345-434b-9684-5d8ab6b2f621";
