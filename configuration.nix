@@ -169,7 +169,10 @@ security.rtkit.enable = true;
     hyprlock # lockscreen
     wl-clipboard # for waybar
     keyd # rebind key
+
     grim # screenshot
+    slurp # capture region
+    swappy # edit after capture
 
     networkmanager # network
     networkmanagerapplet # applet for network
