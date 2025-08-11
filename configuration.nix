@@ -184,7 +184,6 @@ security.rtkit.enable = true;
     google-chrome # not a good browser but i got kidnapped
     brave # good browser
 
-    discord-ptb # discord
     webcord # fixed discord for hyprland
 
     # tools make life better
