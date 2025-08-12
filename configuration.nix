@@ -141,6 +141,13 @@ security.rtkit.enable = true;
     fcitx5-configtool
   ];
 
+  programs.nix-ld.enable = true;
+  
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc.lib
+    zlib
+  ];
+
   programs.firefox.enable = true;
   programs.zsh.enable = true;
   programs.chromium.enable = true;
