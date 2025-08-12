@@ -152,6 +152,9 @@ security.rtkit.enable = true;
     neovim # better vim
     vscode # i code here
 
+    direnv # for nix adhoc shell in dir
+    nix-direnv
+
     wget # for downloading
     curl # good downloading
 
