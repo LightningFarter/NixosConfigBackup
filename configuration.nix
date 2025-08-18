@@ -52,7 +52,7 @@
   };
 
   services.keyd.enable = true;
-  environment.etc."keyd/default.conf".text = ''
+    environment.etc."keyd/default.conf".text = ''
     [ids]
     *
 
@@ -191,7 +191,7 @@ security.rtkit.enable = true;
     zsh # good shell
     neofetch # display status on shell
 
-    google-chrome # not a good browser but i got kidnapped
+    google-chrome # not a good browser
     brave # good browser
 
     webcord # fixed discord for hyprland
@@ -216,6 +216,8 @@ security.rtkit.enable = true;
     gcc # c and cpp
     uv # package manager
     python3 # better shell script
+
+    typst # good latex
 
     # input methods
     fcitx5-configtool
