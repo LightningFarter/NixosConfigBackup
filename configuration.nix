@@ -179,6 +179,7 @@ security.rtkit.enable = true;
     hyprlock # lockscreen
     wl-clipboard # for waybar
     keyd # rebind key
+    wev
 
     grim # screenshot
     slurp # capture region
