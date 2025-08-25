@@ -52,13 +52,14 @@
   };
 
   services.keyd.enable = true;
-    environment.etc."keyd/default.conf".text = ''
-    [ids]
-    *
+  environment.etc."keyd/default.conf".text = ''
+  [ids]
+  *
 
-    [main]
-    leftshift+leftmeta+f23 = leftmeta
+  [main]
+  leftshift+leftmeta+f23 = leftmeta
   '';
+
   
   fileSystems."/ubuntu" = {
     device = "/dev/disk/by-uuid/75931f3e-6345-434b-9684-5d8ab6b2f621";
@@ -169,7 +170,7 @@ security.rtkit.enable = true;
 
     hyprland # life
     hyprpaper # wallpaper
-    rofi # menu manager
+    rofi-wayland # menu manager
     dunst # notification daemon
     xdg-utils # utils
     xwayland # support wayland fallback
