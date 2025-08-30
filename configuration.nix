@@ -138,6 +138,7 @@ security.rtkit.enable = true;
     fcitx5-chinese-addons
     fcitx5-table-extra
     fcitx5-chewing
+    fcitx5-anthy
     fcitx5-gtk
     fcitx5-configtool
   ];
