@@ -219,6 +219,7 @@ security.rtkit.enable = true;
     gcc # c and cpp
     uv # package manager
     python3 # better shell script
+    gnumake # make
 
     typst # good latex
 
