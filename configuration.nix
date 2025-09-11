@@ -240,6 +240,8 @@ security.rtkit.enable = true;
 
     # pdf viewer
     evince # gnome pdf viewer
+
+    dpkg # to install .deb
   ];
 
   security.pam.services.hyprlock = {
