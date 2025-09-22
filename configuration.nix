@@ -221,6 +221,7 @@ security.rtkit.enable = true;
     python3 # better shell script
     gnumake # make
 
+    texlive.combined.scheme-full # latex
     typst # good latex
 
     # input methods
