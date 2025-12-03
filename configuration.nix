@@ -86,7 +86,7 @@ security.rtkit.enable = true;
     packages = with pkgs; [
       noto-fonts
       noto-fonts-cjk-sans
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       jetbrains-mono
       dejavu_fonts
       nerd-fonts.jetbrains-mono
@@ -133,15 +133,20 @@ security.rtkit.enable = true;
   #   ];
   # };
 
-  i18n.inputMethod.enabled = "fcitx5";
-  i18n.inputMethod.fcitx5.addons = with pkgs; [
-    fcitx5-chinese-addons
-    fcitx5-table-extra
-    fcitx5-chewing
-    fcitx5-anthy
-    fcitx5-gtk
-    fcitx5-configtool
-  ];
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      # Core addons must now come from kdePackages (Qt6)
+      kdePackages.fcitx5-chinese-addons
+      fcitx5-chewing 
+      fcitx5-anthy
+      fcitx5-table-extra
+      
+      # GTK support remains separate
+      fcitx5-gtk
+    ];
+  };
 
   programs.nix-ld.enable = true;
   
@@ -225,7 +230,7 @@ security.rtkit.enable = true;
     typst # good latex
 
     # input methods
-    fcitx5-configtool
+    kdePackages.fcitx5-configtool
 
     brightnessctl # brightness control
 
