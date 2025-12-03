@@ -171,7 +171,7 @@ security.rtkit.enable = true;
 
     hyprland # life
     hyprpaper # wallpaper
-    rofi-wayland # menu manager
+    rofi # menu manager
     dunst # notification daemon
     xdg-utils # utils
     xwayland # support wayland fallback
