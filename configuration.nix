@@ -239,6 +239,7 @@ security.rtkit.enable = true;
 
     # video viewer
     imv
+    mpv
 
     # audio controler
     pavucontrol # pause audio volume control
