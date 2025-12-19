@@ -194,6 +194,7 @@ security.rtkit.enable = true;
 
     networkmanager # network
     networkmanagerapplet # applet for network
+    openssl
     
     kitty # terminal
     zsh # good shell
