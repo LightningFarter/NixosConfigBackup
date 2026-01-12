@@ -67,6 +67,22 @@
     options = [ "defaults" ];
   };
 
+  # Enable NTFS support
+  boot.supportedFilesystems = [ "ntfs" ];
+
+  fileSystems."/windows" = {
+    device = "/dev/disk/by-uuid/5EA688F4A688CDC9";
+    fsType = "ntfs3";
+    options = [ 
+      "rw" 
+      "uid=1000" 
+      "gid=100"    # Common GID for 'users' group in NixOS
+      "fmask=0022" # Default permissions for files
+      "dmask=0022" # Default permissions for directories
+      "nofail" 
+    ];
+  };
+
   hardware.bluetooth.enable = true;
 
   services.blueman.enable = true;
@@ -250,6 +266,10 @@ security.rtkit.enable = true;
     evince # gnome pdf viewer
 
     dpkg # to install .deb
+
+    mutter # run applications for gnome
+
+    vbam
   ];
 
   security.pam.services.hyprlock = {
