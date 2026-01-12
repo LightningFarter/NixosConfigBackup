@@ -268,7 +268,7 @@ security.rtkit.enable = true;
     dpkg # to install .deb
 
     mutter # run applications for gnome
-
+    gnome-shell
     vbam
   ];
 
