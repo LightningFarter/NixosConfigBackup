@@ -270,6 +270,12 @@ security.rtkit.enable = true;
     mutter # run applications for gnome
     gnome-shell
     vbam
+
+    openvpn
+
+    cargo
+    rustc
+    tinymist
   ];
 
   security.pam.services.hyprlock = {
