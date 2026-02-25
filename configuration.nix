@@ -103,17 +103,19 @@ security.rtkit.enable = true;
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-color-emoji
-      jetbrains-mono
       dejavu_fonts
-      nerd-fonts.jetbrains-mono
+     
+      nerd-fonts.dejavu-sans-mono
+      nerd-fonts.fira-code
+      nerd-fonts.hack
     ];
 
     fontconfig = {
       enable = true;
       defaultFonts = {
-        serif = [ "DejaVu Serif" "Noto Serif CJK SC" ];
-        sansSerif = [ "DejaVu Sans" "Noto Sans CJK SC" ];
-        monospace = [ "JetBrainsMono" "Noto Sans Mono CJK SC" ];
+        serif = [ "Noto Serif CJK SC" "Noto Serif" ];
+        sansSerif = [ "Noto Sans CJK SC" "Noto Sans" ];
+        monospace = [ "FiraCode Nerd Font Mono"  "DejaVu Sans Mono" ];
       };
     };
   };
@@ -181,6 +183,7 @@ security.rtkit.enable = true;
     vim # text editor, never use nano
     neovim # better vim
     vscode # i code here
+    python314 # general use script
 
     direnv # for nix adhoc shell in dir
     nix-direnv
@@ -240,7 +243,6 @@ security.rtkit.enable = true;
     # coding
     gcc # c and cpp
     uv # package manager
-    python3 # better shell script
     gnumake # make
 
     texlive.combined.scheme-full # latex
