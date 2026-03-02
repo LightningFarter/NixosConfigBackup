@@ -278,6 +278,10 @@ security.rtkit.enable = true;
     cargo
     rustc
     tinymist
+
+    gnome-system-monitor
+    adwaita-icon-theme
+    gnome-themes-extra
   ];
 
   security.pam.services.hyprlock = {
@@ -298,6 +302,9 @@ security.rtkit.enable = true;
     QT_IM_MODULE = "fcitx";
     XMODIFIERS = "@im=fcitx";
     INPUT_METHOD = "fcitx";
+
+    GTK_THEME = "Adwaita:dark";
+    GTK_APPLICATION_PREFER_DARK_THEME = "1";
   };
 
   users.users.jason = {
