@@ -244,6 +244,9 @@ security.rtkit.enable = true;
     gcc # c and cpp
     uv # package manager
     gnumake # make
+    llvm
+    clang
+    binutils
 
     texlive.combined.scheme-full # latex
     typst # good latex
