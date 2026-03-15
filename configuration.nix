@@ -184,6 +184,7 @@ security.rtkit.enable = true;
     neovim # better vim
     vscode # i code here
     python314 # general use script
+    nodejs
 
     direnv # for nix adhoc shell in dir
     nix-direnv
