@@ -108,6 +108,7 @@ security.rtkit.enable = true;
       nerd-fonts.dejavu-sans-mono
       nerd-fonts.fira-code
       nerd-fonts.hack
+      nerd-fonts.jetbrains-mono
     ];
 
     fontconfig = {
@@ -115,7 +116,7 @@ security.rtkit.enable = true;
       defaultFonts = {
         serif = [ "Noto Serif CJK SC" "Noto Serif" ];
         sansSerif = [ "Noto Sans CJK SC" "Noto Sans" ];
-        monospace = [ "FiraCode Nerd Font Mono"  "DejaVu Sans Mono" ];
+        monospace = [ "JetBrainsMono" "Noto Sans Mono CJK SC" ];
       };
     };
   };
