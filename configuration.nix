@@ -10,6 +10,18 @@
       ./hardware-configuration.nix
     ];
 
+  # NEW: Force systemd to kill hanging processes (like Chrome/Portals) 
+  # after 10 seconds instead of the default 90 seconds.
+  # System-wide settings (New 25.05 syntax)
+  systemd.settings.Manager = {
+    DefaultTimeoutStopSec = "10s";
+  };
+  
+  # User-session settings (The 'extraConfig' is still valid for .user)
+  systemd.user.extraConfig = ''
+    DefaultTimeoutStopSec=10s
+  '';
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -49,6 +61,8 @@
   xdg.portal = {
       enable = true;
       extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+      # NEW: Required in newer NixOS versions to prevent portal lag/hangs
+      config.common.default = [ "hyprland" ];
   };
 
   services.keyd.enable = true;
@@ -60,7 +74,6 @@
   leftshift+leftmeta+f23 = leftmeta
   '';
 
-  
   fileSystems."/ubuntu" = {
     device = "/dev/disk/by-uuid/75931f3e-6345-434b-9684-5d8ab6b2f621";
     fsType = "btrfs";
@@ -94,7 +107,7 @@
     jack.enable = false;
   };
 
-security.rtkit.enable = true;
+  security.rtkit.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -105,6 +118,7 @@ security.rtkit.enable = true;
       noto-fonts-color-emoji
       dejavu_fonts
      
+      # NEW: Updated Nerd Fonts syntax for 25.05+
       nerd-fonts.dejavu-sans-mono
       nerd-fonts.fira-code
       nerd-fonts.hack
@@ -114,15 +128,19 @@ security.rtkit.enable = true;
     fontconfig = {
       enable = true;
       defaultFonts = {
-        serif = [ "Noto Serif CJK SC" "Noto Serif" ];
-        sansSerif = [ "Noto Sans CJK SC" "Noto Sans" ];
-        monospace = [ "JetBrainsMono" "Noto Sans Mono CJK SC" ];
+        # NEW: Added TC (Traditional Chinese) variants for Taipei locale
+        serif = [ "Noto Serif CJK TC" "Noto Serif" ];
+        sansSerif = [ "Noto Sans CJK TC" "Noto Sans" ];
+        monospace = [ "JetBrainsMono Nerd Font" "Noto Sans Mono CJK TC" ];
       };
     };
   };
 
   services.dbus.enable = true;
   security.polkit.enable = true;
+
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true; # Enabled to match your package list
 
 
   # Configure keymap in X11
@@ -197,7 +215,7 @@ security.rtkit.enable = true;
 
     hyprland # life
     hyprpaper # wallpaper
-    rofi # menu manager
+    rofi # NEW: Use rofi-wayland for better Hyprland compatibility
     dunst # notification daemon
     xdg-utils # utils
     xwayland # support wayland fallback
@@ -241,6 +259,13 @@ security.rtkit.enable = true;
     jq # sed for json
     rsync # sync files
     file # show file types
+
+    qemu_kvm
+    libvirt
+    virt-manager
+    virt-viewer
+    dnsmasq
+    bridge-utils
 
     # coding
     gcc # c and cpp
@@ -289,14 +314,8 @@ security.rtkit.enable = true;
     gnome-themes-extra
   ];
 
-  security.pam.services.hyprlock = {
-    text = ''
-      auth include login
-      account include login
-      password include login
-      session include login
-    '';
-  };
+  # NEW: Modern NixOS handles PAM for hyprlock without the extra text block
+  security.pam.services.hyprlock = {};
 
   environment.sessionVariables = {
     GDK_DPI_SCALE = "1";
@@ -314,7 +333,12 @@ security.rtkit.enable = true;
 
   users.users.jason = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [
+      "wheel"
+      "libvirtd"
+      "kvm"
+      "networkmanager" # NEW: Allows user to manage wifi without sudo
+    ];
     shell = pkgs.zsh;
   };
 
@@ -362,4 +386,3 @@ security.rtkit.enable = true;
   system.stateVersion = "25.05"; # Did you read the comment?
 
 }
-
