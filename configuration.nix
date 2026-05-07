@@ -271,6 +271,7 @@
     gcc # c and cpp
     uv # package manager
     gnumake # make
+    cmake
     llvm
     clang
     binutils
