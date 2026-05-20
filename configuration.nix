@@ -196,6 +196,8 @@
   programs.zsh.enable = true;
   programs.chromium.enable = true;
 
+  virtualisation.docker.enable = true;
+
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
@@ -276,6 +278,8 @@
     clang
     binutils
 
+    codex
+
     texlive.combined.scheme-full # latex
     typst # good latex
 
@@ -339,6 +343,7 @@
       "libvirtd"
       "kvm"
       "networkmanager" # NEW: Allows user to manage wifi without sudo
+      "docker"
     ];
     shell = pkgs.zsh;
   };
