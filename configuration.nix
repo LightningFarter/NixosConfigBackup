@@ -218,7 +218,7 @@
     hyprland # life
     hyprpaper # wallpaper
     rofi # NEW: Use rofi-wayland for better Hyprland compatibility
-    dunst # notification daemon
+    swaynotificationcenter
     xdg-utils # utils
     xwayland # support wayland fallback
     xorg.xrdb # xwayland configuration
@@ -239,7 +239,9 @@
     
     kitty # terminal
     zsh # good shell
-    neofetch # display status on shell
+    fastfetch # display status on shell
+
+    bubblewrap
 
     google-chrome # not a good browser
     brave # good browser
@@ -278,7 +280,7 @@
     clang
     binutils
 
-    codex
+    # codex
 
     texlive.combined.scheme-full # latex
     typst # good latex
