@@ -28,6 +28,14 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  # Avoid receiver instability from aggressive USB runtime power management.
+  boot.kernelParams = [ "usbcore.autosuspend=-1" ];
+
+  # Keep the Logitech receiver on when it is present.
+  # This avoids USB runtime transitions that can trigger disconnect/re-enumeration loops.
+  services.udev.extraRules = ''
+    ACTION=="add|change", SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="c548", TEST=="power/control", ATTR{power/control}="on"
+  '';
 
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
