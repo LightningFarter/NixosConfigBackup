@@ -17,10 +17,9 @@
     DefaultTimeoutStopSec = "10s";
   };
   
-  # User-session settings (The 'extraConfig' is still valid for .user)
-  systemd.user.extraConfig = ''
-    DefaultTimeoutStopSec=10s
-  '';
+  systemd.user.settings.Manager = {
+    DefaultTimeoutStopSec = "10s";
+  };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
